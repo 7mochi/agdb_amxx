@@ -1,0 +1,16 @@
+{
+  "name": "agdb_amxx",
+  "version": "1.0",
+  "author": "7mochi",
+  "description": "TODO",
+  "scripts": {
+    "build": "amxxpack build",
+    "build-dev": "amxxpack build --config .amxxpack-dev.json",
+    "install": "amxxpack install",
+    "watch": "amxxpack build --watch",
+    "watch-dev": "amxxpack build --watch --config .amxxpack-dev.json"
+  },
+  "devDependencies": {
+    "amxxpack": "^1.4.7"
+  }
+}

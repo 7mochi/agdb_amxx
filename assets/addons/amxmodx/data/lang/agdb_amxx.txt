@@ -1,0 +1,7 @@
+[en]
+EZHTTP_DONE_ERROR = Failed to perform EzHttp request
+PLAYER_REG_ERROR = Failed to register player
+
+[es]
+EZHTTP_DONE_ERROR = Error al realizar la peticion EzHttp
+PLAYER_REG_ERROR = Error al registrar jugador

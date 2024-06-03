@@ -1,0 +1,11 @@
+# NodeJS
+node_modules/
+package-lock.json
+
+# Amxx Pack
+dist/
+.compiler/
+.thirdparty/
+
+# Amxmodx
+*.amxx

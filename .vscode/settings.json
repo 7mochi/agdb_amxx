@@ -1,0 +1,8 @@
+{
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "amxxpawn.compiler.includePaths": [
+        "${workspaceRoot}/.compiler/include",
+        "${workspaceRoot}/assets/addons/amxmodx/scripting/include"
+    ]
+}
