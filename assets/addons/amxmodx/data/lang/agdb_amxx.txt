@@ -1,7 +1,10 @@
 [en]
-EZHTTP_DONE_ERROR = Failed to perform EzHttp request
-PLAYER_REG_ERROR = Failed to register player
-
+EZHTTP_DONE_ERROR = [AGDB] Failed to perform EzHttp request
+PLAYER_REG_ERROR = [AGDB] Failed to register player
+PLAYER_REG_SUCCESS = [AGDB] Player %s registered/updated successfully
+PLAYER_REG_401 = [AGDB] Unauthorized request: %s
 [es]
-EZHTTP_DONE_ERROR = Error al realizar la peticion EzHttp
-PLAYER_REG_ERROR = Error al registrar jugador
+EZHTTP_DONE_ERROR = [AGDB] Error al realizar la peticion EzHttp
+PLAYER_REG_ERROR = [AGDB] Error al registrar jugador
+PLAYER_REG_SUCCESS = [AGDB] Jugador %s registrado/actualizado con exito
+PLAYER_REG_401 = [AGDB] Peticion no autorizada: %s

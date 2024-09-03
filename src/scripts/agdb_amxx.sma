@@ -45,9 +45,15 @@ public get_server_public_ip_done(EzHttpRequest:request) {
         new error[64];
         ezhttp_get_error_message(request, error, charsmax(error));
         server_print("%L", LANG_SERVER, "EZHTTP_DONE_ERROR");
-        server_print("%s", error);
         return;
     }
+
+    new response[512];
+    ezhttp_get_data(request, response, charsmax(response));
+
+    new JSON:json;
+    json = json_parse(response);
+    json_object_get_string(json, "ip", g_szPublicIP, charsmax(g_szPublicIP));
 }
 
 public register_player(id) {
@@ -63,16 +69,16 @@ public register_player(id) {
     ezhttp_option_set_header(options, "ip", g_szPublicIP);
     ezhttp_option_set_header(options, "token", apiKey);
 
-    new steamId[32], nickname[64], ip[64], JSON:jsonPlayer, playerData[1024];
+    new steamId[32], nickname[64], ip[64], JSON:json, playerData[1024];
     get_user_authid(id, steamId, charsmax(steamId));
     get_user_name(id, nickname, charsmax(nickname));
     get_user_ip(id, ip, charsmax(ip), 1);
 
-    jsonPlayer = json_init_object();
-    json_object_set_string(jsonPlayer, "steamID", steamId);
-    json_object_set_string(jsonPlayer, "nickname", nickname);
-    json_object_set_string(jsonPlayer, "ip", ip);
-    json_serial_to_string(jsonPlayer, playerData, charsmax(playerData));
+    json = json_init_object();
+    json_object_set_string(json, "steamID", steamId);
+    json_object_set_string(json, "nickname", nickname);
+    json_object_set_string(json, "ip", ip);
+    json_serial_to_string(json, playerData, charsmax(playerData));
 
     ezhttp_option_set_body(options, playerData);
 
@@ -85,7 +91,24 @@ public register_player_done(EzHttpRequest:request) {
         new error[64];
         ezhttp_get_error_message(request, error, charsmax(error));
         server_print("%L", LANG_SERVER, "EZHTTP_DONE_ERROR");
-        server_print("%s", error);
         return;
+    }
+
+    new response[256], JSON:json;
+    ezhttp_get_data(request, response, charsmax(response));
+
+    json = json_parse(response);
+
+    switch (ezhttp_get_http_code(request)) {
+        case 201: {
+            new steamID[32];
+            json_object_get_string(json, "steamID", steamID, charsmax(steamID));
+            server_print("%L", LANG_SERVER, "PLAYER_REG_SUCCESS", steamID);
+        }
+        case 401: {
+            new message[128];
+            json_object_get_string(json, "message", message, charsmax(message));
+            server_print("%L", LANG_SERVER, "PLAYER_REG_401", message);
+        }
     }
 }
