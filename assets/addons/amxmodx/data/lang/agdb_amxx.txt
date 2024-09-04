@@ -6,6 +6,7 @@ PLAYER_REG_401 = [AGDB] Unauthorized request: %s
 PLAYER_BANNED = [AGDB] You're in the ban list of the AGDB network
 PLAYER_BANNED_LOG = [AGDB] The banned player %s has tried to connect
 PLAYER_BANNED_401 = [AGDB] Unauthorized request: %s
+AGDB_INFO = [AGDB] This server is part of the AGDB network. Join discord.gg/8btSjbYYFc for more information
 
 [es]
 EZHTTP_DONE_ERROR = [AGDB] Error al realizar la peticion EzHttp
@@ -15,3 +16,4 @@ PLAYER_REG_401 = [AGDB] Peticion no autorizada: %s
 PLAYER_BANNED = [AGDB] Estas en la lista de baneados de la red AGDB
 PLAYER_BANNED_LOG = [AGDB] El jugador baneado %s ha intentado conectarse
 PLAYER_BANNED_401 = [AGDB] Peticion no autorizada: %s
+AGDB_INFO = [AGDB] Este servidor forma parte de la red AGDB. Unete a discord.gg/8btSjbYYFc para mas informacion
