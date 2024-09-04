@@ -43,6 +43,10 @@ public client_authorized(id) {
     }
 }
 
+public client_putinserver(id) {
+    set_task(15.0, "show_advertisement", id);
+}
+
 public get_server_public_ip() {
     new url[128];
     formatex(url, charsmax(url), "http://api.ipify.org?format=json");
@@ -192,4 +196,8 @@ public check_if_player_banned_done(EzHttpRequest:request) {
             server_print("%L", LANG_SERVER, "PLAYER_BANNED_401", message);
         }
     }
+}
+
+public show_advertisement(id) {
+    client_print(id, print_chat, "%l", "AGDB_INFO");
 }
