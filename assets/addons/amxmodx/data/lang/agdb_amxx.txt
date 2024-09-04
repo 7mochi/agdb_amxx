@@ -3,8 +3,15 @@ EZHTTP_DONE_ERROR = [AGDB] Failed to perform EzHttp request
 PLAYER_REG_ERROR = [AGDB] Failed to register player
 PLAYER_REG_SUCCESS = [AGDB] Player %s registered/updated successfully
 PLAYER_REG_401 = [AGDB] Unauthorized request: %s
+PLAYER_BANNED = [AGDB] You're in the ban list of the AGDB network
+PLAYER_BANNED_LOG = [AGDB] The banned player %s has tried to connect
+PLAYER_BANNED_401 = [AGDB] Unauthorized request: %s
+
 [es]
 EZHTTP_DONE_ERROR = [AGDB] Error al realizar la peticion EzHttp
 PLAYER_REG_ERROR = [AGDB] Error al registrar jugador
 PLAYER_REG_SUCCESS = [AGDB] Jugador %s registrado/actualizado con exito
 PLAYER_REG_401 = [AGDB] Peticion no autorizada: %s
+PLAYER_BANNED = [AGDB] Estas en la lista de baneados de la red AGDB
+PLAYER_BANNED_LOG = [AGDB] El jugador baneado %s ha intentado conectarse
+PLAYER_BANNED_401 = [AGDB] Peticion no autorizada: %s
