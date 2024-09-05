@@ -4,11 +4,11 @@
   "author": "7mochi",
   "description": "TODO",
   "scripts": {
-    "build-linux": "amxxpack build --config .amxxpack.linux.json",
+    "build-linux": "amxxpack build --config .amxxpack-linux.json",
     "build-windows": "amxxpack build --config .amxxpack-windows.json",
-    "install-linux": "amxxpack install --config .amxxpack.linux.json",
+    "install-linux": "amxxpack install --config .amxxpack-linux.json",
     "install-windows": "amxxpack install --config .amxxpack-windows.json",
-    "watch-linux": "amxxpack build --watch --config .amxxpack.linux.json",
+    "watch-linux": "amxxpack build --watch --config .amxxpack-linux.json",
     "watch-windows": "amxxpack build --watch --config .amxxpack-windows.json"
   },
   "devDependencies": {
