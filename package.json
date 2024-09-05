@@ -9,7 +9,7 @@
     "install-linux": "amxxpack install --config .amxxpack.linux.json",
     "install-windows": "amxxpack install --config .amxxpack-windows.json",
     "watch-linux": "amxxpack build --watch --config .amxxpack.linux.json",
-    "watch-windows": "amxxpack build --watch --config .amxxpack-windows.json",
+    "watch-windows": "amxxpack build --watch --config .amxxpack-windows.json"
   },
   "devDependencies": {
     "amxxpack": "^1.4.7"
