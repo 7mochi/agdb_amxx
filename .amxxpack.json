@@ -17,10 +17,10 @@
     ]
   },
   "output": {
-    "plugins": "./dist/valve/addons/amxmodx/plugins",
-    "assets": "./dist/valve",
-    "scripts": "./dist/valve/addons/amxmodx/scripting",
-    "include": "./dist/valve/addons/amxmodx/scripting/include"
+    "plugins": "./dist/ag/addons/amxmodx/plugins",
+    "assets": "./dist/ag",
+    "scripts": "./dist/ag/addons/amxmodx/scripting",
+    "include": "./dist/ag/addons/amxmodx/scripting/include"
   },
   "rules": {
     "flatCompilation": true
