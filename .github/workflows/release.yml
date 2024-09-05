@@ -1,0 +1,53 @@
+name: AGDB - New version release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Install NodeJS
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    
+    - name: Install dependencies for Linux
+      run: |
+        make init-linux
+    
+    - name: Build AGDB (Linux) with node-amxxpack
+      run: |
+        make build-linux
+
+    - name: Rename dist folder
+      run: |
+        mv dist dist-linux
+    
+    - name: Install dependencies for Windows
+      run: |
+        make init-windows
+    
+    - name: Build AGDB (Windows) with node-amxxpack
+      run: |
+        make build-windows
+    
+    - name: Prepare releases in zip
+      run: |
+        cd dist-linux && zip -r ../agdb-${{github.ref_name}}-linux.zip * && cd $GITHUB_WORKSPACE
+        cd dist && zip -r ../agdb-${{github.ref_name}}-windows.zip * && cd $GITHUB_WORKSPACE
+    
+    - name: Upload all assets (Release)
+      uses: softprops/action-gh-release@v2
+      with:
+        files: |
+          ./agdb-${{github.ref_name}}-linux.zip
+          ./agdb-${{github.ref_name}}-windows.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
