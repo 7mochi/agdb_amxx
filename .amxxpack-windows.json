@@ -1,0 +1,28 @@
+{
+  "compiler": {
+    "dir": "./.compiler",
+    "version": "1.9.0-git5294",
+    "dev": true,
+    "addons": [],
+    "executable": "amxxpc"
+  },
+  "include": [
+    "./.compiler/include",
+    "./assets/addons/amxmodx/scripting/include"
+  ],
+  "input": {
+    "scripts": "./src/scripts",
+    "assets": [
+      { "dir": "./assets", "filter": "*.!(|so)"}
+    ]
+  },
+  "output": {
+    "plugins": "./dist/ag/addons/amxmodx/plugins",
+    "assets": "./dist/ag",
+    "scripts": "./dist/ag/addons/amxmodx/scripting",
+    "include": "./dist/ag/addons/amxmodx/scripting/include"
+  },
+  "rules": {
+    "flatCompilation": true
+  }
+}

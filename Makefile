@@ -1,18 +1,27 @@
-init:
+init-linux:
 	npm install
-	npm run install
+	npm run install-linux
 
-build:
-	npm run build
+init-windows:
+	npm install
+	npm run install-windows
 
-build-dev:
-	npm run build-dev
+build-linux:
+	npm run build-linux
 
-watch:
-	npm run watch
+build-windows:
+	npm run build-windows
 
-watch-dev:
-	npm run watch-dev
+watch-linux:
+	npm run watch-linux
 
-clean:
+watch-windows:
+	npm run watch-windows
+
+clean-linux:
 	rm -rf .compiler .thirdparty dist
+
+clean-windows:
+	rd /s /q .compiler
+	rd /s /q .thirdparty
+	rd /s /q dist
