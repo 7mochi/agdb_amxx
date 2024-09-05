@@ -1,7 +1,5 @@
 #include <amxmodx>
 #include <amxmisc>
-#include <curl>
-#include <curl_helper>
 #include <easy_http>
 #include <json>
 
