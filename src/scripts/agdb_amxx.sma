@@ -71,12 +71,15 @@ public get_server_public_ip_done(EzHttpRequest:request) {
 
 public check_all_players_ban_status() {
     new players[MAX_PLAYERS], numPlayers;
-	get_players(players, numPlayers);
-
-	new player;
+    get_players(players, numPlayers);
+    
+    new player;
     for (new i; i < numPlayers; i++) {
         player = players[i];
-        check_if_player_banned(player);
+        
+        if (!is_user_bot(player) && !is_user_hltv(player)) {
+            check_if_player_banned(player);
+        }
     }
 
     set_task(floatmax(15.0, get_pcvar_float(g_cvarCheckBanStatusInterval)), "check_all_players_ban_status", TASK_CHECKBANSTATUS);
