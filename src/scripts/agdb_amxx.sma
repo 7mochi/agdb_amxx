@@ -23,6 +23,8 @@ public plugin_init() {
     register_plugin(PLUGIN, VERSION, AUTHOR);
     register_dictionary("agdb_amxx.txt");
 
+    create_cvar("agdb_version", VERSION, FCVAR_SERVER);
+    
     g_cvarBaseApiUrl = create_cvar("agdb_base_api_url", "http://agdb.7mochi.ru");
     g_cvarApiKey = create_cvar("agdb_api_key", "");
     g_cvarCheckBanStatusInterval = create_cvar("agdb_check_ban_status_interval", "30.0");
