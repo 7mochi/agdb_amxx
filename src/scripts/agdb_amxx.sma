@@ -6,7 +6,7 @@
 #pragma semicolon 1
 
 #define PLUGIN      "AG Database"
-#define VERSION     "1.0.1"
+#define VERSION     "1.0.2"
 #define AUTHOR      "7mochi"
 
 enum (+=394) {
