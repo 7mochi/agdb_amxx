@@ -49,7 +49,8 @@ public client_putinserver(id) {
 
 public get_server_public_ip() {
     new url[128];
-    formatex(url, charsmax(url), "http://api.ipify.org?format=json");
+    get_pcvar_string(g_cvarBaseApiUrl, url, charsmax(url));
+    formatex(url, charsmax(url), "%s/network/ip", url);
     
     ezhttp_get(url, "get_server_public_ip_done");
 }
@@ -153,7 +154,7 @@ public check_if_player_banned(id) {
     new url[128], apiKey[64], steamId[32], szId[2];
     get_pcvar_string(g_cvarBaseApiUrl, url, charsmax(url));
     get_user_authid(id, steamId, charsmax(steamId));
-    formatex(url, charsmax(url), "%s/players/%s", url, steamId);
+    formatex(url, charsmax(url), "%s/players/%s/ban-status", url, steamId);
 
     get_pcvar_string(g_cvarApiKey, apiKey, charsmax(apiKey));
 
